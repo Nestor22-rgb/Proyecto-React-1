@@ -1,12 +1,16 @@
+import NavBar from "./componentes/NavBar/NavBar"
 
 
 const App = () => {
 
 
   return (
-    <div>
-      <h1>ENOJONA</h1>
-    </div>
+    
+    <>
+    <NavBar/>
+    
+    </>
+  
   )
 }
 
