@@ -1,9 +1,29 @@
+import { useState, useEffect } from "react"
+import { getProductos, getProductosPorCategoria } from "../../Asycmocks"
+import ItemList from "../ItemList/ItemList"
+import { useParams } from "react-router-dom"
+const ItemLisContainer = () => {
+  
+  const [productos,setProductos] = useState([])
+
+  const {idCategoria} = useParams()
 
 
-const ItemLisContainer = (props) => {
+
+  useEffect(()=>{
+
+    const funcionProductos = idCategoria ? getProductosPorCategoria : getProductos;
+
+    funcionProductos(idCategoria)
+      .then(res => setProductos(res))
+      
+  }, [idCategoria])
     
   return (
-    <h1>{props.saludo}</h1>
+    <>
+    <h2 style={{textAlign: "center"}}>MIS PRODUCTOS</h2>
+    <ItemList productos={productos}/>
+    </>
   )
 }
 

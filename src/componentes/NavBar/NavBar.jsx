@@ -1,23 +1,32 @@
 import CartWidget from "../CartWidget/CartWidget"
-import ItemLisContainer from "../ItemListContainer/ItemLisContainer"
 import "./NavBar.css"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
 
 
   return (
     <header>
-        <h1>Antonia Agosti</h1>
+      <Link to="/">
+      <img src="public/logo.png" alt="" />
+      </Link>
+        
         <nav>
             <ul>
-                <li>CARTERAS</li>
-                <li>BILLETERAS</li>
-                <li>MOCHILAS</li>
+                <li>
+                  <Link to="/categoria/mochilas"> MOCHILAS </Link>
+                </li>
+                <li>
+                  <Link to="/categoria/bolsos"> BOLSOS </Link>
+                </li>
+                <li>
+                  <Link to="/categoria/bandoleras"> BANDOLERAS </Link>
+                </li>
             </ul>
         </nav>
 
         <CartWidget/>
-        <ItemLisContainer saludo="ECOMER EN PROCESO"/>
+        
     </header>
     
  
